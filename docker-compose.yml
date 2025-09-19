@@ -1,0 +1,12 @@
+services:
+  vm: # virtual machine
+    container_name: seitelite-vm
+    build:
+      context: tools
+      dockerfile: Dockerfile
+    volumes:
+      - ./public:/var/www/html
+    ports:
+      - 8080:80 # Apache
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'

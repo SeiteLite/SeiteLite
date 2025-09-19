@@ -1,0 +1,25 @@
+php_value short_open_tag 1
+
+Options All -Indexes
+
+Header set Expires "access plus 2 hours"
+
+# no access to hidden files
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+RewriteEngine On
+
+# disallow certain extensions
+RewriteCond %{REQUEST_FILENAME} \.(?:md|php)$
+RewriteRule ^ - [R=404,L]
+
+# otherwise serve existing files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# rewrite path into query
+RewriteRule ^(.*)$ "/index.php?path=$1" [END,QSA,B]
+

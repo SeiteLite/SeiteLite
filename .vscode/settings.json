@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    ".vscode/": true,
+    ".editorconfig": true,
+    ".prettier*": true,
+    "*-lock.yaml": true,
+    "*.config.mjs": true,
+    "tsconfig.json": true,
+    ".gitmodules": true
+  }
+}

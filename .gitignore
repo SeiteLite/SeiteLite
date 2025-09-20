@@ -1,4 +1,12 @@
-node_modules/
+# built files
 build/
-# TODO
+public/dist/
+
+# node modules etc.
+node_modules/
+package-lock.json
+.pnpm-store/
+pnpm-lock.yaml
+
+# TODO out
 .OLD/

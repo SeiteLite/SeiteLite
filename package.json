@@ -1,7 +1,7 @@
 {
   "name": "seitelite",
-  "version": "1.0.0",
-  "description": "Easy and lightweight websites",
+  "version": "0.9.0",
+  "description": "Build lightweight websites easily with SiteLite.",
   "scripts": {
     "check": "tsc --noEmit",
     "test": "vitest",
@@ -13,7 +13,7 @@
     "watch:dts": "tsc -p public/sl/ts/dts.json --watch",
     "watch:ts": "tsc -p public/sl/ts/ts.json --watch",
     "watch:els": "tsc -p public/sl/els/ts.json --watch",
-    "purge": "rm -rf node_modules/ .pnpm-debug.log"
+    "purge": "rm -rf node_modules/ build/ public/dist package-lock.json pnpm-lock.yaml yarn.lock"
   },
   "devDependencies": {
     "fs-extra": "^11.3.0",

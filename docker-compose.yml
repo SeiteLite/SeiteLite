@@ -5,7 +5,7 @@ services:
       context: tools
       dockerfile: Dockerfile
     volumes:
-      - ./public:/var/www/html
+      - ./:/SeiteLite
     ports:
       - 8080:80 # Apache
     extra_hosts:

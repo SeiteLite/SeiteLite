@@ -1,8 +1,8 @@
-php_value short_open_tag 1
-
 Options All -Indexes
-
 Header set Expires "access plus 2 hours"
+
+# important
+php_value short_open_tag 1
 
 # no access to hidden files
 <FilesMatch "^\.">
@@ -20,6 +20,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
+# disallow routes with dots (i.e. files with extensions)
+RewriteCond %{REQUEST_FILENAME} \.
+RewriteRule ^ - [R=404,L]
+
 # rewrite path into query
 RewriteRule ^(.*)$ "/index.php?path=$1" [END,QSA,B]
-

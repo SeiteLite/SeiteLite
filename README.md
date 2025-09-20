@@ -1,5 +1,7 @@
 # SeiteLite /ˈsaɪtəˌlaɪt/
 
+_**Currently under development**_
+
 **SeiteLite** is a library and a framework for building websites, using modern (but just
 vanilla) HTML, PHP, CSS, and Type/JavaScript.
 
@@ -36,9 +38,12 @@ installed as a submodule at the path `public/sl`.
 
 ## Prerequisites
 
-- PHP 8+. SeiteLite is currently being developed and tested with PHP 8.3.6.
-- Apache web server. SeiteLite relies on `.htaccess` files for directory-level
+- PHP 8.3+. SeiteLite is currently being developed and tested with PHP 8.3.6.
+- Apache web server 2.3+. SeiteLite relies on `.htaccess` files for directory-level
   configuration.
+- Node.js
+
+All prerequisites are installed in the development Docker container.
 
 ## Getting started
 
@@ -56,6 +61,24 @@ docker compose up
 ```
 
 ## Development
+
+```bash
+# connect to the container
+./vm-bash.sh
+
+# then in /SeiteLite
+
+# optionally remove old node_modules if it exists
+npm run purge
+# install dependencies
+npm install
+
+# watch and build TS files
+npm run watch
+
+# build and minify TS files
+npm run build
+```
 
 ## TypeScript
 
@@ -92,17 +115,24 @@ Therefore in the SeiteLite code are to be found, among others, these names:
 |         |            |
 | **wdt** | width      |
 | **hgt** | height     |
+| **row** | row        |
+| **col** | column     |
+| **tbl** | table      |
+| **tpl** | template   |
 |         |            |
 | **brd** | border     |
 | **rad** | radius     |
 |         |            |
+| **val** | value      |
+| **var** | variable   |
 | **res** | result     |
-|         |            |
-| **tpl** | template   |
+| **err** | error      |
 |         |            |
 | **s**   | string     |
 
 and so on.
+
+## Custom elements
 
 ## Miscellaneous
 
